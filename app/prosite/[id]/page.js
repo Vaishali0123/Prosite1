@@ -15,11 +15,13 @@ const Page = ({ params }) => {
 
   const fetchf = async () => {
     try {
-      const res = await axios.post("http://localhost:7190/api/v1/getprosite", {
-        username: decodeUsernameAndNumber(params.id),
-      });
+      const res = await axios.post(
+        "https://work.grovyo.xyz/api/v1/getprosite",
+        {
+          username: decodeUsernameAndNumber(params.id),
+        }
+      );
       setData(res.data?.prosite);
-      console.log(res.data);
     } catch (err) {
       console.log(err);
     }
